@@ -5,76 +5,12 @@ import {
   StarIcon,
 } from "@heroicons/react/solid";
 import Image from "next/image";
-import { getSession, signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import React from "react";
-import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Header() {
   const { data: session } = useSession();
   const router = useRouter();
-  // const [user, setUser] = React.useState({});
-  // const [session, setSession] = React.useState({});
-  // const [account, setAccount] = React.useState({});
-  // const hardcodedId = "ku1qepYonFzIwuZVVHGv";
-  // const hardcodedAcc = "JugCWjkd5VNJEkTiGgFo"
-
-  // async function getAccountData() {
-  //   // const docRef = getDoc(collection(db, "accounts"), account);
-  //   const docRef = doc(db, "accounts", hardcodedAcc);
-  //   const docSnap = await getDoc(docRef);
-
-  //   if (docSnap.exists()) {
-  //     const userData = docSnap.data();
-  //     // console.log("Document data:", userData);
-  //     setUser(userData);
-  //   } else {
-  //     // docSnap.data() will be undefined in this case
-  //     // console.log("No such document!");
-  //   }
-  // }
-  // getAccountData();
-
-  // async function getUserData() {
-  //   const docRef = doc(db, "users", hardcodedId);
-  //   const docSnap = await getDoc(docRef);
-
-  //   if (docSnap.exists()) {
-  //     const userData = docSnap.data();
-  //     // console.log("Document data:", userData);
-  //     setUser(userData);
-  //   } else {
-  //     // docSnap.data() will be undefined in this case
-  //     console.log("No such document!");
-  //   }
-  // }
-  // getUserData();
-
-  // console.log(db)
-
-  // const docRef = doc(db, "users", hardcodedId);
-  // // const profilePic = getDoc(db, "users", hardcodedId);
-
-  // async function getImage() {
-  //   const postCollectionRef = await query(
-  //     collection(db, "users"),
-  //     where("image", "==", user.image)
-  //   );
-  //   const { docs } = await getDocs(postCollectionRef);
-  //   console.log(docs.map((doc) => doc.data()));
-  // }
-
-  // const docRef = doc(db, "users", uid);
-  // const docSnap = await getDoc(docRef);
-
-  // if (docSnap.exists()) {
-  //   console.log("Document data:", docSnap.data());
-  // } else {
-  //   // docSnap.data() will be undefined in this case
-  //   console.log("No such document!");
-  // }
 
   return (
     <div className="sticky bg-[#040714] top-0 z-[1000] flex items-center px-10 h-[72px] md:px-12">
