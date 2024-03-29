@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import React from "react";
 
 function ShowThumbnail({ result }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
@@ -15,6 +16,7 @@ function ShowThumbnail({ result }) {
           `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
           `${BASE_URL}${result.poster_path}`
         }
+        alt=""
         width={330}
         height={210}
         objectFit="cover"
