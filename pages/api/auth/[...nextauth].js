@@ -9,10 +9,11 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      secret: process.env.NEXTAUTH_SECRET,
     }),
     // ...add more providers here
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXT_PUBLIC_SECRET,
 
   adapter: FirestoreAdapter(db),
 });
