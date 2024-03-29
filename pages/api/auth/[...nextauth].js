@@ -12,8 +12,7 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
-  secret: process.env.NEXTAUTH_SECRET,
-  secret: process.env.NEXT_PUBLIC_SECRET,
+  secret: process.env.SECRET,
 
   adapter: FirestoreAdapter(db),
 });
